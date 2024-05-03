@@ -6,6 +6,7 @@ import Statist from "../components/statis/Statist";
 import Chance from "../components/chanceSection/Chance";
 import Courses from "../components/courses/Courses";
 import Response from "../components/response/Response";
+import FormWrapper from "../components/formSection/FormWrapper";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
       <Chance />
       <Courses />
       <Response />
+      <FormWrapper />
     </Box>
   );
 };

@@ -99,7 +99,7 @@ const Header = () => {
             </Stack>
             <DividerSpan></DividerSpan>
             <FormControl
-              size="80px"
+              size="100px"
               sx={{ border: "none", backgroundColor: "transparent" }}
               variant="standard"
             >
