@@ -3,6 +3,7 @@ import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { BsTelephoneFill } from "react-icons/bs";
+import { TiLocationOutline } from "react-icons/ti";
 import {
   Box,
   Container,
@@ -54,49 +55,60 @@ const Header = () => {
           direction={"row"}
           alignItems={"center"}
           spacing={"40px"}
-          justifyContent={"flex-end"}
+          justifyContent={"space-between"}
           marginBottom={"16px"}
         >
-          <Stack component={"ul"} direction={"row"} spacing={"23px"}>
-            <SocialsLi>
-              <a href="#">
-                <FaTelegram className="socials" />
-              </a>
-            </SocialsLi>
-            <SocialsLi>
-              <a href="#">
-                <AiFillInstagram />
-              </a>
-            </SocialsLi>
-            <SocialsLi>
-              <a href="#">
-                <FaLinkedin />
-              </a>
-            </SocialsLi>
-            <SocialsLi>
-              <a href="#">
-                <FaFacebook />
-              </a>
-            </SocialsLi>
-          </Stack>
-          <DividerSpan></DividerSpan>
-          <FormControl
-            size="80px"
-            sx={{ border: "none", backgroundColor: "transparent" }}
-            variant="standard"
+          <Box display={"flex"} gap={"5px"} alignItems={"center"}>
+            <TiLocationOutline />
+            <Typography>Manzilimiz</Typography>
+          </Box>
+          <Stack
+            direction={"row"}
+            alignItems={"center"}
+            spacing={"40px"}
+            justifyContent={"flex-end"}
           >
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={lang}
-              label="Age"
-              onChange={handleChange}
+            <Stack component={"ul"} direction={"row"} spacing={"23px"}>
+              <SocialsLi>
+                <a href="#">
+                  <FaTelegram className="socials" />
+                </a>
+              </SocialsLi>
+              <SocialsLi>
+                <a href="#">
+                  <AiFillInstagram />
+                </a>
+              </SocialsLi>
+              <SocialsLi>
+                <a href="#">
+                  <FaLinkedin />
+                </a>
+              </SocialsLi>
+              <SocialsLi>
+                <a href="#">
+                  <FaFacebook />
+                </a>
+              </SocialsLi>
+            </Stack>
+            <DividerSpan></DividerSpan>
+            <FormControl
+              size="80px"
+              sx={{ border: "none", backgroundColor: "transparent" }}
+              variant="standard"
             >
-              <MenuItem value={"uz"}>Uzbek</MenuItem>
-              <MenuItem value={"ru"}>Russian</MenuItem>
-              <MenuItem value={"en"}>English</MenuItem>
-            </Select>
-          </FormControl>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={lang}
+                label="Age"
+                onChange={handleChange}
+              >
+                <MenuItem value={"uz"}>Uzbek</MenuItem>
+                <MenuItem value={"ru"}>Russian</MenuItem>
+                <MenuItem value={"en"}>English</MenuItem>
+              </Select>
+            </FormControl>
+          </Stack>
         </Stack>
         <Stack
           direction={"row"}

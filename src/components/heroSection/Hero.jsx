@@ -12,6 +12,7 @@ const BoxWrapper = styled.div`
   background-position: center;
   background-size: cover;
   border-radius: 56px;
+  box-shadow: 0px 15px 46px 0px rgba(0, 0, 0, 0.56);
 `;
 const StartButton = styled.button`
   /* background-color: "#ffffff"; */
