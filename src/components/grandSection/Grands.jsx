@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const BoxCardBG = styled(Box)`
   background-image: url(./bgCard.jpg);
+  background-attachment: fixed;
   background-size: cover;
 `;
 const Grands = () => {
