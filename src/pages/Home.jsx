@@ -5,6 +5,7 @@ import Referens from "../components/referesesSection/Referens";
 import Statist from "../components/statis/Statist";
 import Chance from "../components/chanceSection/Chance";
 import Courses from "../components/courses/Courses";
+import Response from "../components/response/Response";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Statist />
       <Chance />
       <Courses />
+      <Response />
     </Box>
   );
 };
