@@ -58,10 +58,17 @@ const Header = () => {
           justifyContent={"space-between"}
           marginBottom={"16px"}
         >
-          <Box display={"flex"} gap={"5px"} alignItems={"center"}>
+          <Link
+            href="#"
+            color={"#5D5D5F"}
+            sx={{ textDecoration: "none" }}
+            display={"flex"}
+            gap={"5px"}
+            alignItems={"center"}
+          >
             <TiLocationOutline />
             <Typography>Manzilimiz</Typography>
-          </Box>
+          </Link>
           <Stack
             direction={"row"}
             alignItems={"center"}

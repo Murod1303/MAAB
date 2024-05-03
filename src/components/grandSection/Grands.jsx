@@ -1,5 +1,10 @@
 import { Box, Container, Typography } from "@mui/material";
+import styled from "styled-components";
 
+const BoxCardBG = styled(Box)`
+  background-image: url(./bgCard.jpg);
+  background-size: cover;
+`;
 const Grands = () => {
   return (
     <Box component={"section"} marginBottom={"100px"}>
@@ -21,11 +26,14 @@ const Grands = () => {
                 padding: "24px",
               }}
             >
-              <Box
+              <BoxCardBG
                 marginBottom={"40px"}
                 padding={"25px"}
                 width={"100%"}
-                sx={{ backgroundColor: "#fff", borderRadius: "24px" }}
+                sx={{
+                  backgroundColor: "url(./bgCard.jpg)",
+                  borderRadius: "24px",
+                }}
               >
                 <Typography
                   component={"strong"}
@@ -37,7 +45,7 @@ const Grands = () => {
                 >
                   Shartnoma asosida
                 </Typography>
-              </Box>
+              </BoxCardBG>
               <Typography
                 component={"p"}
                 fontSize={"14px"}
@@ -60,7 +68,7 @@ const Grands = () => {
                 padding: "24px",
               }}
             >
-              <Box
+              <BoxCardBG
                 marginBottom={"40px"}
                 padding={"25px"}
                 width={"100%"}
@@ -76,7 +84,7 @@ const Grands = () => {
                 >
                   Shartli Grant
                 </Typography>
-              </Box>
+              </BoxCardBG>
               <Typography
                 component={"p"}
                 fontSize={"14px"}
@@ -99,7 +107,7 @@ const Grands = () => {
                 padding: "24px",
               }}
             >
-              <Box
+              <BoxCardBG
                 marginBottom={"40px"}
                 padding={"25px"}
                 width={"100%"}
@@ -115,7 +123,7 @@ const Grands = () => {
                 >
                   100% Grant
                 </Typography>
-              </Box>
+              </BoxCardBG>
               <Typography
                 component={"p"}
                 fontSize={"14px"}
