@@ -13,3 +13,4 @@ function App() {
 }
 
 export default App;
+/* created by Murod Shernazaroff */
