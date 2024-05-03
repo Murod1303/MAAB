@@ -4,6 +4,7 @@ import Grands from "../components/grandSection/Grands";
 import Referens from "../components/referesesSection/Referens";
 import Statist from "../components/statis/Statist";
 import Chance from "../components/chanceSection/Chance";
+import Courses from "../components/courses/Courses";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Referens />
       <Statist />
       <Chance />
+      <Courses />
     </Box>
   );
 };

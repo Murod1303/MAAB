@@ -14,3 +14,14 @@ body,
 body {
   font-family: sans-serif;
 }
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background-color: #ea1538;
+  transform-origin: 50%;
+  z-index: 15;
+}
