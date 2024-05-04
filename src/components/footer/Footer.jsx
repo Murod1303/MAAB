@@ -1,4 +1,4 @@
-import { Box, Container, Link, Stack, Typography } from "@mui/material";
+import { Box, Link, Stack, Typography } from "@mui/material";
 import { FaTelegram } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import { FaLinkedin } from "react-icons/fa";
@@ -8,6 +8,7 @@ import { MdOutlineMail } from "react-icons/md";
 import { BsTelephoneFill } from "react-icons/bs";
 import { TiLocationOutline } from "react-icons/ti";
 import styled from "styled-components";
+import { ContainerStyled } from "../generalStyle/GeneralStyle";
 
 const SocialsLi = styled.li`
   & a svg {
@@ -16,24 +17,69 @@ const SocialsLi = styled.li`
     fill: #fff;
   }
 `;
+const FooterSection = styled(Box)`
+  padding: 30px;
+  @media (max-width: 720px) {
+    padding: 20px;
+    & .bgColor .forBgPadding {
+      padding: 54px 62px 34px 62px;
+    }
+    & .logo {
+      width: 160px;
+      height: 40px;
+    }
+    & .telFooter {
+      font-size: 24px;
+    }
+    & .nestedLi {
+      & strong {
+        font-size: 20px;
+      }
+      & .footerLink a {
+        font-size: 14px;
+      }
+    }
+  }
+  @media (max-width: 590px) {
+    padding: 16px 0;
+    & .bgColor .forBgPadding {
+      padding: 34px 42px 34px 42px;
+    }
+    & .logo {
+      width: 150px;
+      height: 35px;
+    }
+    & .telFooter {
+      font-size: 18px;
+    }
+    & .nestedLi {
+      & strong {
+        font-size: 16px;
+      }
+      & .footerLink a {
+        font-size: 14px;
+      }
+    }
+  }
+`;
 const Footer = () => {
   return (
-    <Box
-      component={"footer"}
-      padding={"80px"}
-      sx={{ backgroundColor: "#0C081A" }}
-    >
-      <Container
-        maxWidth={"1680px"}
-        sx={{ margin: "0 auto", padding: "0 16px", width: "100%" }}
-      >
-        <Box sx={{ backgroundColor: "#ffffff19" }} borderRadius={"40px"}>
+    <FooterSection component={"footer"} sx={{ backgroundColor: "#0C081A" }}>
+      <ContainerStyled>
+        <Box
+          className="bgColor"
+          sx={{ backgroundColor: "#ffffff19" }}
+          borderRadius={"40px"}
+        >
           <Box
             component={"ul"}
+            className="forBgPadding"
             padding={"64px 72px 34px 72px"}
             display={"flex"}
             alignItems={"flex-start"}
             justifyContent={"space-between"}
+            gap={"40px"}
+            flexWrap={"wrap"}
           >
             <Box
               component={"li"}
@@ -43,6 +89,7 @@ const Footer = () => {
             >
               <Link href={"#"} marginBottom={"40px"}>
                 <img
+                  className="logo"
                   src="./MAAB.png"
                   alt="MAAB's logo"
                   width={328}
@@ -50,6 +97,7 @@ const Footer = () => {
                 />
               </Link>
               <Link
+                className="telFooter"
                 href="tel:+998991112233"
                 display={"inline-block"}
                 fontSize={"28px"}
@@ -89,56 +137,118 @@ const Footer = () => {
               </Stack>
             </Box>
             <Box component={"li"}>
-              <Typography
-                display={"inline-block"}
-                component={"strong"}
-                fontSize={"24px"}
-                fontWeight={600}
-                marginBottom={"24px"}
-                color={"#fff"}
-              >
-                Kurslarimiz
-              </Typography>
-              <Stack
-                component={"ul"}
-                display={"flex"}
-                alignItems={"flex-start"}
-                justifyContent={"center"}
-                gap={"24px"}
-              >
-                <Box component={"li"}>
-                  <Link
-                    href="#"
-                    fontSize={"18px"}
-                    sx={{ textDecoration: "none" }}
+              <Box component={"ul"} display={"flex"} gap={"60px"}>
+                <Box component={"li"} className="nestedLi">
+                  <Typography
+                    display={"inline-block"}
+                    component={"strong"}
+                    fontSize={"24px"}
+                    fontWeight={600}
+                    marginBottom={"24px"}
                     color={"#fff"}
                   >
-                    Data analytics
-                  </Link>
+                    Kurslarimiz
+                  </Typography>
+                  <Stack
+                    className="footerLink"
+                    component={"ul"}
+                    display={"flex"}
+                    alignItems={"flex-start"}
+                    justifyContent={"center"}
+                    gap={"24px"}
+                  >
+                    <Box component={"li"}>
+                      <Link
+                        href="#"
+                        fontSize={"18px"}
+                        sx={{ textDecoration: "none" }}
+                        color={"#fff"}
+                      >
+                        Data analytics
+                      </Link>
+                    </Box>
+                    <Box component={"li"}>
+                      <Link
+                        href="#"
+                        fontSize={"18px"}
+                        sx={{ textDecoration: "none" }}
+                        color={"#fff"}
+                      >
+                        Data engineer
+                      </Link>
+                    </Box>
+                    <Box component={"li"}>
+                      <Link
+                        href="#"
+                        fontSize={"18px"}
+                        sx={{ textDecoration: "none" }}
+                        color={"#fff"}
+                      >
+                        Cloud data engineering
+                      </Link>
+                    </Box>
+                  </Stack>
                 </Box>
-                <Box component={"li"}>
-                  <Link
-                    href="#"
-                    fontSize={"18px"}
-                    sx={{ textDecoration: "none" }}
+
+                <Box component={"li"} className="nestedLi">
+                  <Typography
+                    display={"inline-block"}
+                    component={"strong"}
+                    fontSize={"24px"}
+                    fontWeight={600}
+                    marginBottom={"24px"}
                     color={"#fff"}
                   >
-                    Data engineer
-                  </Link>
-                </Box>
-                <Box component={"li"}>
-                  <Link
-                    href="#"
-                    fontSize={"18px"}
-                    sx={{ textDecoration: "none" }}
-                    color={"#fff"}
+                    Manyular
+                  </Typography>
+                  <Stack
+                    className="footerLink"
+                    component={"ul"}
+                    display={"flex"}
+                    alignItems={"flex-start"}
+                    justifyContent={"center"}
+                    gap={"24px"}
                   >
-                    Cloud data engineering
-                  </Link>
+                    <Box component={"li"}>
+                      <Link
+                        href="#"
+                        fontSize={"18px"}
+                        sx={{ textDecoration: "none" }}
+                        color={"#fff"}
+                      >
+                        Grantlar
+                      </Link>
+                    </Box>
+                    <Box component={"li"}>
+                      <Link
+                        href="#"
+                        fontSize={"18px"}
+                        sx={{ textDecoration: "none" }}
+                        color={"#fff"}
+                      >
+                        Sertifikatlarimiz
+                      </Link>
+                    </Box>
+                    <Box component={"li"}>
+                      <Link
+                        href="#"
+                        fontSize={"18px"}
+                        sx={{ textDecoration: "none" }}
+                        color={"#fff"}
+                      >
+                        Ustozlar
+                      </Link>
+                    </Box>
+                  </Stack>
                 </Box>
-              </Stack>
+              </Box>
             </Box>
-            <Box component={"li"}>
+            <Box
+              component={"li"}
+              maxWidth={"470px"}
+              width={"100%"}
+              className="nestedLi"
+            >
               <Typography
                 display={"inline-block"}
                 component={"strong"}
@@ -146,67 +256,19 @@ const Footer = () => {
                 fontWeight={600}
                 marginBottom={"24px"}
                 color={"#fff"}
-              >
-                Manyular
-              </Typography>
-              <Stack
-                component={"ul"}
-                display={"flex"}
-                alignItems={"flex-start"}
-                justifyContent={"center"}
-                gap={"24px"}
-              >
-                <Box component={"li"}>
-                  <Link
-                    href="#"
-                    fontSize={"18px"}
-                    sx={{ textDecoration: "none" }}
-                    color={"#fff"}
-                  >
-                    Grantlar
-                  </Link>
-                </Box>
-                <Box component={"li"}>
-                  <Link
-                    href="#"
-                    fontSize={"18px"}
-                    sx={{ textDecoration: "none" }}
-                    color={"#fff"}
-                  >
-                    Sertifikatlarimiz
-                  </Link>
-                </Box>
-                <Box component={"li"}>
-                  <Link
-                    href="#"
-                    fontSize={"18px"}
-                    sx={{ textDecoration: "none" }}
-                    color={"#fff"}
-                  >
-                    Ustozlar
-                  </Link>
-                </Box>
-              </Stack>
-            </Box>
-            <Box component={"li"} maxWidth={"470px"} width={"100%"}>
-              <Typography
-                display={"inline-block"}
-                component={"strong"}
-                fontSize={"24px"}
-                fontWeight={600}
-                marginBottom={"24px"}
-                color={"#fff"}
+                className="contactInfo"
               >
                 Biz bilan bog’laning
               </Typography>
               <Stack
+                className="footerLink"
                 component={"ul"}
                 display={"flex"}
                 alignItems={"flex-start"}
                 justifyContent={"center"}
                 gap={"24px"}
               >
-                <Box component={"li"}>
+                <Box component={"li"} className="nestedLi">
                   <Link
                     href="#"
                     fontSize={"16px"}
@@ -263,8 +325,8 @@ const Footer = () => {
             </Box>
           </Box>
         </Box>
-      </Container>
-    </Box>
+      </ContainerStyled>
+    </FooterSection>
   );
 };
 

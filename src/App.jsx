@@ -1,4 +1,4 @@
-// import Footer from "./components/footer/Footer";
+import Footer from "./components/footer/Footer";
 import Header from "./components/header/Header";
 import Home from "./pages/Home";
 import { motion, useScroll } from "framer-motion";
@@ -12,7 +12,7 @@ function App() {
       />
       <Header />
       <Home />
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
