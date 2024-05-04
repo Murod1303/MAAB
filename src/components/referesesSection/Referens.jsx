@@ -1,15 +1,121 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
+import { ContainerStyled } from "../generalStyle/GeneralStyle";
+import styled from "styled-components";
+const ReferenseSetion = styled(Box)`
+  @media (max-width: 984px) {
+    & h3 {
+      font-size: 50px;
+    }
+    & .wrapper {
+      padding: 70px;
+    }
+    & li {
+      max-width: 350px;
+      & strong {
+        font-size: 18px;
+      }
+      & p {
+        font-size: 13px;
+      }
+    }
+  }
+  @media (max-width: 888px) {
+    & h3 {
+      font-size: 45px;
+    }
+    & .wrapper {
+      padding: 65px;
+    }
+    & li {
+      max-width: 330px;
+      & strong {
+        font-size: 16px;
+      }
+      & p {
+        font-size: 13px;
+      }
+    }
+  }
+  @media (max-width: 834px) {
+    & h3 {
+      font-size: 45px;
+    }
+    & .wrapper {
+      padding: 60px;
+    }
+    & li {
+      max-width: 300px;
+      & strong {
+        font-size: 15px;
+      }
+      & p {
+        font-size: 13px;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    & h3 {
+      font-size: 50px;
+    }
+    & .wrapper {
+      padding: 50px;
+    }
+    & li {
+      max-width: 400px;
+      & strong {
+        font-size: 20px;
+      }
+      & p {
+        font-size: 14px;
+      }
+    }
+  }
+  @media (max-width: 498px) {
+    & h3 {
+      font-size: 42px;
+    }
+    & .wrapper {
+      padding: 32px;
+    }
+    & li {
+      max-width: 400px;
+      & strong {
+        font-size: 16px;
+      }
+      & p {
+        font-size: 13px;
+      }
+    }
+  }
+  @media (max-width: 360px) {
+    & h3 {
+      font-size: 36px;
+    }
+    & .wrapper {
+      padding: 32px;
+    }
+    & li {
+      max-width: 400px;
+      & strong {
+        font-size: 14px;
+      }
+      & p {
+        font-size: 12px;
+      }
+    }
+    & .forHeight {
+      height: 100%;
+    }
+  }
+`;
 const Referens = () => {
   return (
-    <Box
+    <ReferenseSetion
       component={"section"}
       marginBottom={"64px"}
       sx={{ boxShadow: "0px 0px 104px -57px rgba(0,0,0,0.36)" }}
     >
-      <Container
-        maxWidth={"1680px"}
-        sx={{ width: "100%", margin: "0 auto", paddingX: "16px" }}
-      >
+      <ContainerStyled>
         <Box
           display={"flex"}
           justifyContent={"center"}
@@ -21,6 +127,7 @@ const Referens = () => {
           sx={{
             backgroundImage: "linear-gradient(45deg, #0152EE 0%, #5F95FE 100%)",
           }}
+          className="wrapper"
         >
           <Typography
             component={"h3"}
@@ -32,6 +139,7 @@ const Referens = () => {
           </Typography>
           <Stack maxWidth={"1234px"} width={"100%"}>
             <Box
+              width={"100%"}
               component={"ul"}
               display={"flex"}
               alignItems={"center"}
@@ -107,6 +215,7 @@ const Referens = () => {
                   borderRadius={"20px"}
                 ></Box>
                 <Box
+                  className="forHeight"
                   position={"relative"}
                   width={"100%"}
                   padding={"20px"}
@@ -160,6 +269,7 @@ const Referens = () => {
                   borderRadius={"20px"}
                 ></Box>
                 <Box
+                  className="forHeight"
                   position={"relative"}
                   width={"100%"}
                   padding={"20px"}
@@ -211,6 +321,7 @@ const Referens = () => {
                   borderRadius={"20px"}
                 ></Box>
                 <Box
+                  className="forHeight"
                   position={"relative"}
                   width={"100%"}
                   padding={"20px"}
@@ -350,8 +461,8 @@ const Referens = () => {
             </Box>
           </Stack>
         </Box>
-      </Container>
-    </Box>
+      </ContainerStyled>
+    </ReferenseSetion>
   );
 };
 

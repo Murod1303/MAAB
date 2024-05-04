@@ -14,11 +14,11 @@ const Home = () => {
       <Hero />
       <Grands />
       <Referens />
-      <Statist />
-      <Chance />
-      <Courses />
-      <Response />
-      <FormWrapper />
+      {/* <Statist /> */}
+      {/* <Chance /> */}
+      {/* <Courses /> */}
+      {/* <Response /> */}
+      {/* <FormWrapper /> */}
     </Box>
   );
 };

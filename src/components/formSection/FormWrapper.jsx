@@ -178,7 +178,7 @@ const FormWrapper = () => {
                     >
                       <MenuItem
                         selected
-                        value={"j"}
+                        // value={"j"}
                         sx={{
                           display: "flex",
                           alignItems: "center",
@@ -188,7 +188,7 @@ const FormWrapper = () => {
                         <Typography>Junior</Typography>
                       </MenuItem>
                       <MenuItem
-                        value={"m"}
+                        // value={"m"}
                         sx={{
                           display: "flex",
                           alignItems: "center",
@@ -198,7 +198,7 @@ const FormWrapper = () => {
                         <Typography>Middle</Typography>
                       </MenuItem>
                       <MenuItem
-                        value={"s"}
+                        // value={"s"}
                         sx={{
                           display: "flex",
                           alignItems: "center",

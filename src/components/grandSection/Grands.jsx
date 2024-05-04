@@ -1,26 +1,61 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import styled from "styled-components";
+import { ContainerStyled } from "../generalStyle/GeneralStyle";
 
 const BoxCardBG = styled(Box)`
   background-image: url(./bgCard.jpg);
   background-attachment: fixed;
   background-size: cover;
 `;
+const GrandsWrapper = styled(Box)`
+  @media (max-width: 1072px) {
+    & li {
+      padding: 20px;
+    }
+    ${BoxCardBG} {
+      padding: 20px;
+      margin-bottom: 32px;
+      & strong {
+        font-size: 26px;
+      }
+      & li p {
+        font-size: 13px;
+      }
+    }
+  }
+  @media (max-width: 672px) {
+    & li {
+      padding: 16px;
+    }
+    ${BoxCardBG} {
+      padding: 16px;
+      margin-bottom: 24px;
+      & strong {
+        font-size: 20px;
+      }
+      & li p {
+        font-size: 12px;
+      }
+    }
+  }
+`;
 const Grands = () => {
   return (
-    <Box component={"section"} marginBottom={"100px"}>
-      <Container maxWidth="1680px" sx={{ margin: "0 auto", paddingX: "16px" }}>
+    <GrandsWrapper component={"section"} marginBottom={"100px"}>
+      <ContainerStyled>
         <Box>
           <Box
             display={"flex"}
             alignItems={"center"}
             justifyContent={"center"}
+            flexWrap={"wrap"}
             gap={"34px"}
             component={"ul"}
           >
             <Box
               component={"li"}
-              width={"33%"}
+              maxWidth={"450px"}
+              width={"100%"}
               sx={{
                 backgroundColor: "#F5F5F7",
                 borderRadius: "40px",
@@ -62,7 +97,8 @@ const Grands = () => {
             </Box>
             <Box
               component={"li"}
-              width={"33%"}
+              maxWidth={"450px"}
+              width={"100%"}
               sx={{
                 backgroundColor: "#F5F5F7",
                 borderRadius: "40px",
@@ -101,7 +137,8 @@ const Grands = () => {
             </Box>
             <Box
               component={"li"}
-              width={"33%"}
+              maxWidth={"450px"}
+              width={"100%"}
               sx={{
                 backgroundColor: "#F5F5F7",
                 borderRadius: "40px",
@@ -140,8 +177,8 @@ const Grands = () => {
             </Box>
           </Box>
         </Box>
-      </Container>
-    </Box>
+      </ContainerStyled>
+    </GrandsWrapper>
   );
 };
 
