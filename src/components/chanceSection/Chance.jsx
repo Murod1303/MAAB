@@ -60,7 +60,9 @@ const ChanceSection = styled(Box)`
       );
     }
   }
+  margin-bottom: 90px;
   @media (max-width: 764px) {
+    margin-bottom: 75px;
     & h4 {
       font-size: 42px;
       margin-bottom: 20px;
@@ -74,6 +76,7 @@ const ChanceSection = styled(Box)`
     }
   }
   @media (max-width: 764px) {
+    margin-bottom: 75px;
     & h4 {
       width: 80%;
       font-size: 36px;
@@ -88,6 +91,7 @@ const ChanceSection = styled(Box)`
     }
   }
   @media (max-width: 564px) {
+    margin-bottom: 70px;
     & h4 {
       width: 80%;
       font-size: 28px;
@@ -106,6 +110,7 @@ const ChanceSection = styled(Box)`
     }
   }
   @media (max-width: 472px) {
+    margin-bottom: 60px;
     & h4 {
       width: 90%;
       font-size: 24px;
@@ -120,6 +125,7 @@ const ChanceSection = styled(Box)`
     }
   }
   @media (max-width: 382px) {
+    margin-bottom: 50px;
     & h4 {
       width: 70%;
       font-size: 18px;
@@ -136,7 +142,7 @@ const ChanceSection = styled(Box)`
 `;
 const Chance = () => {
   return (
-    <ChanceSection component={"section"} marginBottom={"125px"}>
+    <ChanceSection component={"section"}>
       <ContainerStyled>
         <Stack
           className="wrapper"

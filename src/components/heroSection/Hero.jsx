@@ -1,9 +1,10 @@
-import { Box, Container, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import styled from "styled-components";
 import { FaPlay } from "react-icons/fa";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { ContainerStyled } from "../generalStyle/GeneralStyle";
 const BoxWrapper = styled.div`
   position: relative;
   height: 600px;
@@ -33,6 +34,7 @@ const StartButton = styled.button`
   }
 `;
 const HeroSection = styled(Box)`
+  margin-bottom: 120px;
   @media (max-width: 1048px) {
     & h3 {
       font-size: 42px;
@@ -51,6 +53,7 @@ const HeroSection = styled(Box)`
     }
   }
   @media (max-width: 872px) {
+    margin-bottom: 80px;
     & h3 {
       font-size: 26px;
     }
@@ -68,6 +71,7 @@ const HeroSection = styled(Box)`
     }
   }
   @media (max-width: 520px) {
+    margin-bottom: 60px;
     & h3 {
       font-size: 20px;
     }
@@ -85,6 +89,7 @@ const HeroSection = styled(Box)`
     }
   }
   @media (max-width: 420px) {
+    margin-bottom: 40px;
     & h3 {
       font-size: 16px;
     }
@@ -107,11 +112,8 @@ const Hero = () => {
     AOS.init();
   }, []);
   return (
-    <HeroSection component={"section"} marginBottom={"120px"}>
-      <Container
-        maxWidth={"1840px"}
-        sx={{ margin: "0 auto", paddingX: "16px" }}
-      >
+    <HeroSection component={"section"}>
+      <ContainerStyled>
         <BoxWrapper data-aos="fade-up">
           <StartButton>
             <FaPlay />
@@ -130,7 +132,7 @@ const Hero = () => {
             Sizga zarur bo’lgan barcha bilim va ko’nikmalar shu yerda!
           </Typography>
         </BoxWrapper>
-      </Container>
+      </ContainerStyled>
     </HeroSection>
   );
 };

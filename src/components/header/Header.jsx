@@ -46,6 +46,7 @@ export const DividerSpan = styled.span`
 `;
 
 const HeaderStyled = styled(Box)`
+  margin-bottom: 40px;
   & .hamburgerMune {
     display: none;
     & svg {
@@ -88,6 +89,7 @@ const HeaderStyled = styled(Box)`
       }
     }
     @media (max-width: 532px) {
+      margin-bottom: 20px;
       & .topHeader {
         display: none;
       }
@@ -117,7 +119,6 @@ const Header = () => {
       position={"relative"}
       component={"header"}
       paddingY={"16px"}
-      marginBottom={"40px"}
       sx={{
         boxShadow: " 0px 0px 171px -44px rgba(0,0,0,0.62)",
         border: "none",

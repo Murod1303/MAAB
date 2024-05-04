@@ -11,6 +11,7 @@ const BoxCardBG = styled(Box)`
   background-size: cover;
 `;
 const GrandsWrapper = styled(Box)`
+  margin-bottom: 100px;
   @media (max-width: 1072px) {
     & li {
       padding: 20px;
@@ -27,6 +28,7 @@ const GrandsWrapper = styled(Box)`
     }
   }
   @media (max-width: 672px) {
+    margin-bottom: 60px;
     & li {
       padding: 16px;
     }
@@ -47,11 +49,7 @@ const Grands = () => {
     AOS.init();
   }, []);
   return (
-    <GrandsWrapper
-      component={"section"}
-      marginBottom={"100px"}
-      data-aos="zoom-out-up"
-    >
+    <GrandsWrapper component={"section"} data-aos="zoom-out-up">
       <ContainerStyled>
         <Box>
           <Box

@@ -328,7 +328,7 @@ const Footer = () => {
                 </Box>
                 <Box component={"li"}>
                   <Link
-                    href="#"
+                    href="mailto:someOne@gmail.com"
                     fontSize={"16px"}
                     sx={{ textDecoration: "none" }}
                     color={"#fff"}
@@ -342,7 +342,7 @@ const Footer = () => {
                 </Box>
                 <Box component={"li"}>
                   <Link
-                    href="#"
+                    href="tel:+998977839045"
                     fontSize={"16px"}
                     sx={{ textDecoration: "none" }}
                     color={"#fff"}
