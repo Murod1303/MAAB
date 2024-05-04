@@ -1,14 +1,17 @@
 import {
   Box,
-  Container,
-  FormControl,
+  Button,
+  Checkbox,
+  FormControlLabel,
   MenuItem,
-  Select,
   Stack,
   TextField,
   Typography,
 } from "@mui/material";
+import { HiArrowSmRight } from "react-icons/hi";
 import styled from "styled-components";
+import { ContainerStyled } from "../generalStyle/GeneralStyle";
+import { useState } from "react";
 
 const InputWrite = styled.input`
   display: inline-block;
@@ -18,14 +21,82 @@ const InputWrite = styled.input`
   border-radius: 16px;
   background-color: #f5f5f7;
 `;
+const FormSection = styled(Box)`
+  @media (max-width: 1096px) {
+    & .stackWrapper {
+      padding: 30px 30px 30px 42px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      & .textWrapper {
+        width: 100%;
+        margin-bottom: 32px;
+        & h4 {
+          width: 100%;
+          text-align: center;
+        }
+        & p {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+    & .formWrapperForResposive {
+      width: 100%;
+    }
+  }
+  @media (max-width: 721px) {
+    & .stackWrapper {
+      padding: 24px;
+      & h4 {
+        font-size: 26px;
+      }
+    }
+    & .formWrapperForResposive {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      & form {
+        justify-content: center;
+        flex-direction: column;
+        & .forFullResponsive {
+          width: 100%;
+        }
+        & .BtnAndCheckBox {
+          & button {
+            margin: 0 auto;
+          }
+          & .checkboxComp {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 442px) {
+    & .stackWrapper {
+      padding: 24px 16px 16px 16px;
+      & h4 {
+        font-size: 20px;
+      }
+    }
+    & .formWrapperForResposive {
+      padding: 16px;
+    }
+    & .checkboxComp span {
+      font-size: 12px;
+    }
+  }
+`;
 const FormWrapper = () => {
+  const [valueLang, setValueLang] = useState("");
+  const [valueLogic, setValueLogic] = useState("");
   return (
-    <Box component={"section"} marginBottom={"80px"}>
-      <Container
-        maxWidth={"1680px"}
-        sx={{ margin: "0 auto", padding: "0 16px", width: "100%" }}
-      >
+    <FormSection component={"section"} marginBottom={"80px"}>
+      <ContainerStyled>
         <Stack
+          className="stackWrapper"
           direction={"row"}
           display={"flex"}
           alignItems={"flex-start"}
@@ -37,7 +108,7 @@ const FormWrapper = () => {
           }}
           borderRadius={"40px"}
         >
-          <Box width={"45%"}>
+          <Box width={"45%"} className="textWrapper">
             <Typography
               width={"80%"}
               component={"h4"}
@@ -57,6 +128,7 @@ const FormWrapper = () => {
             </Typography>
           </Box>
           <Box
+            className="formWrapperForResposive"
             padding={"40px"}
             width={"55%"}
             sx={{ backgroundColor: "#fff" }}
@@ -81,8 +153,8 @@ const FormWrapper = () => {
               gap={"24px"}
             >
               <Box
-                maxWidth={"400px"}
-                width={"100%"}
+                className="forFullResponsive"
+                width={"45%"}
                 display={"flex"}
                 alignItems={"flex-start"}
                 flexDirection={"column"}
@@ -101,8 +173,8 @@ const FormWrapper = () => {
                 <InputWrite type="text" id="name" placeholder="Name" />
               </Box>
               <Box
-                maxWidth={"400px"}
-                width={"100%"}
+                className="forFullResponsive"
+                width={"45%"}
                 display={"flex"}
                 alignItems={"flex-start"}
                 flexDirection={"column"}
@@ -121,8 +193,8 @@ const FormWrapper = () => {
                 <InputWrite type="text" id="name" placeholder="+998" />
               </Box>
               <Box
-                maxWidth={"400px"}
-                width={"100%"}
+                className="forFullResponsive"
+                width={"45%"}
                 display={"flex"}
                 alignItems={"flex-start"}
                 flexDirection={"column"}
@@ -139,83 +211,108 @@ const FormWrapper = () => {
                   Ingliz tili darajangiz
                 </Box>
                 <TextField
+                  InputProps={{
+                    style: {
+                      borderRadius: "16px",
+                    },
+                  }}
                   id="gender-select"
                   select
-                  value={"1"}
+                  label="Darajangiz"
                   margin="normal"
                   variant="outlined"
-                  sx={{ width: "100%", margin: "0", borderRadius: "16px" }}
+                  value={valueLang}
+                  onChange={(e) => {
+                    setValueLang(e?.target?.value);
+                  }}
+                  required
+                  sx={{ width: "100%", margin: "0" }}
                 >
-                  <MenuItem value={"1"}>IELTS</MenuItem>
+                  <MenuItem value={"ielts"}>IELTS</MenuItem>
+                  <MenuItem value={"cefr"}>CEFR</MenuItem>
                 </TextField>
               </Box>
               <Box
-                maxWidth={"400px"}
-                width={"100%"}
+                className="forFullResponsive"
+                width={"45%"}
                 display={"flex"}
                 alignItems={"flex-start"}
                 flexDirection={"column"}
               >
                 <Box
-                  display={"inline-block"}
-                  marginBottom={"10px"}
-                  component={"label"}
-                  htmlFor="name"
-                  fontSize={"16px"}
-                  fontWeight={500}
-                  marginLeft={"5px"}
+                  width={"100%"}
+                  display={"flex"}
+                  alignItems={"flex-start"}
+                  flexDirection={"column"}
                 >
-                  Mantiqiy bilim darajangiz
+                  <Box
+                    display={"inline-block"}
+                    marginBottom={"10px"}
+                    component={"label"}
+                    htmlFor="name"
+                    fontSize={"16px"}
+                    fontWeight={500}
+                    marginLeft={"5px"}
+                  >
+                    Mantiqiy bilim darajangiz
+                  </Box>
+                  <TextField
+                    InputProps={{
+                      style: {
+                        borderRadius: "16px",
+                      },
+                    }}
+                    id="gender-select"
+                    select
+                    label="Bilim darajangiz"
+                    margin="normal"
+                    variant="outlined"
+                    required
+                    value={valueLogic}
+                    onChange={(e) => {
+                      setValueLogic(e?.target?.value);
+                    }}
+                    sx={{ width: "100%", margin: "0" }}
+                  >
+                    <MenuItem value={"1"}>Junior</MenuItem>
+                    <MenuItem value={"2"}>Middle</MenuItem>
+                    <MenuItem value={"3"}>Senior</MenuItem>
+                  </TextField>
                 </Box>
-                <Box sx={{ minWidth: 120, width: "100%" }}>
-                  <FormControl fullWidth sx={{ display: "flex" }}>
-                    <Select
-                      sx={{ borderRadius: "16px" }}
-                      autoWidth={false}
-                      labelId="demo-simple-select-label"
-                      id="demo-simple-select"
-                      label="Age"
-                    >
-                      <MenuItem
-                        selected
-                        // value={"j"}
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <Typography>Junior</Typography>
-                      </MenuItem>
-                      <MenuItem
-                        // value={"m"}
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <Typography>Middle</Typography>
-                      </MenuItem>
-                      <MenuItem
-                        // value={"s"}
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <Typography>Senior</Typography>
-                      </MenuItem>
-                    </Select>
-                  </FormControl>
-                </Box>
+              </Box>
+              <Box
+                className="BtnAndCheckBox"
+                display={"flex"}
+                alignItems={"center"}
+                justifyContent={"space-between"}
+                flexWrap={"wrap"}
+                gap={"24px"}
+              >
+                <FormControlLabel
+                  className="checkboxComp"
+                  sx={{
+                    width: "60%",
+                    display: "flex",
+                    alignItems: "flex-start",
+                  }}
+                  required
+                  control={<Checkbox />}
+                  label={`Arizani topshirish orqali siz shaxsiy ma'lumotlaringizni “Maxfiylik siyosati”ga muvofiq qayta ishlashga rozilik bildirasiz`}
+                />
+                <Button
+                  type="submit"
+                  sx={{ width: "200px", padding: "12px", borderRadius: "30px" }}
+                  variant="contained"
+                  endIcon={<HiArrowSmRight />}
+                >
+                  Arizani jo’natish
+                </Button>
               </Box>
             </Box>
           </Box>
         </Stack>
-      </Container>
-    </Box>
+      </ContainerStyled>
+    </FormSection>
   );
 };
 

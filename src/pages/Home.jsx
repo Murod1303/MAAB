@@ -18,7 +18,7 @@ const Home = () => {
       <Chance />
       <Courses />
       <Response />
-      {/* <FormWrapper /> */}
+      <FormWrapper />
     </Box>
   );
 };
