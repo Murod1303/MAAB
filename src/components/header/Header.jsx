@@ -4,9 +4,9 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { BsTelephoneFill } from "react-icons/bs";
 import { TiLocationOutline } from "react-icons/ti";
+import { CiMenuBurger } from "react-icons/ci";
 import {
   Box,
-  Container,
   FormControl,
   Link,
   MenuItem,
@@ -16,15 +16,22 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import styled from "styled-components";
+import { ContainerStyled } from "../generalStyle/GeneralStyle";
+import Menu from "../menu/Menu";
 
-const SocialsLi = styled.li`
+export const SocialsLi = styled.li`
+  & a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
   & a svg {
     width: 24px;
     height: 24px;
     fill: #9a999b;
   }
 `;
-const DividerSpan = styled.span`
+export const DividerSpan = styled.span`
   display: inline-block;
   width: 2px;
   height: 30px;
@@ -32,13 +39,67 @@ const DividerSpan = styled.span`
   border-radius: 20px;
 `;
 
+const HeaderStyled = styled(Box)`
+  & .hamburgerMune {
+    display: none;
+    & svg {
+      width: 24px;
+      height: 24px;
+      fill: #000;
+    }
+  }
+  @media (max-width: 724px) {
+    margin-bottom: 30px;
+    ${SocialsLi} {
+      & a svg {
+        width: 20px;
+        height: 20px;
+        fill: #9a999b;
+      }
+    }
+    & .logoMaab {
+      width: 130px;
+    }
+    & .telMaab {
+      font-size: 16px;
+    }
+    & .contactBTN {
+      & span {
+        font-size: 14px;
+      }
+      & svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    @media (max-width: 532px) {
+      & .topHeader {
+        display: none;
+      }
+      & .contactWrapperTel {
+        display: none;
+      }
+      & .hamburgerMune {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+`;
+
 const Header = () => {
+  const [open, setOpen] = useState(false);
+  const toggleDrawer = (newOpen) => () => {
+    setOpen(newOpen);
+  };
   const [lang, setLang] = useState("uz");
   const handleChange = (event) => {
     setLang(event.target.value);
   };
   return (
-    <Box
+    <HeaderStyled
+      position={"relative"}
       component={"header"}
       paddingY={"16px"}
       marginBottom={"40px"}
@@ -47,11 +108,9 @@ const Header = () => {
         border: "none",
       }}
     >
-      <Container
-        maxWidth="1680px"
-        sx={{ width: "100%", margin: "0 auto", paddingX: "16px" }}
-      >
+      <ContainerStyled>
         <Stack
+          className="topHeader"
           direction={"row"}
           alignItems={"center"}
           spacing={"40px"}
@@ -78,7 +137,7 @@ const Header = () => {
             <Stack component={"ul"} direction={"row"} spacing={"23px"}>
               <SocialsLi>
                 <a href="#">
-                  <FaTelegram className="socials" />
+                  <FaTelegram />
                 </a>
               </SocialsLi>
               <SocialsLi>
@@ -122,8 +181,19 @@ const Header = () => {
           alignItems={"center"}
           justifyContent={"space-between"}
         >
-          <img src="./MAAB.png" alt="MAAB's logo" height={40} width={150} />
-          <Stack direction={"row"} alignItems={"center"} spacing={"24px"}>
+          <img
+            className="logoMaab"
+            src="./MAAB.png"
+            alt="MAAB's logo"
+            height={40}
+            width={150}
+          />
+          <Stack
+            direction={"row"}
+            alignItems={"center"}
+            spacing={"24px"}
+            className="contactWrapperTel"
+          >
             <Link
               color={"#FB5F12"}
               sx={{
@@ -133,6 +203,7 @@ const Header = () => {
                 fontSize: "20px",
               }}
               href="tel:+998991112233"
+              className="telMaab"
             >
               +998 (99) 111-22-33
             </Link>
@@ -147,15 +218,22 @@ const Header = () => {
                 borderRadius: "24px",
                 textDecoration: "none",
               }}
+              className="contactBTN"
               href="#"
             >
-              <Typography>Aloqada bo’ling</Typography>
+              <Typography className="contactBTNText" component={"span"}>
+                Aloqada bo’ling
+              </Typography>
               <BsTelephoneFill />
             </Link>
           </Stack>
+          <div className="hamburgerMune">
+            <CiMenuBurger onClick={toggleDrawer(true)} />
+            <Menu open={open} toggleDrawer={toggleDrawer} />
+          </div>
         </Stack>
-      </Container>
-    </Box>
+      </ContainerStyled>
+    </HeaderStyled>
   );
 };
 

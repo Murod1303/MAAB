@@ -21,7 +21,11 @@ body {
   left: 0;
   right: 0;
   height: 12px;
-  background-color: #ea1538;
+  background: linear-gradient(
+    90deg,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 205, 1) 91%
+  );
   transform-origin: 0%;
   z-index: 15;
 }

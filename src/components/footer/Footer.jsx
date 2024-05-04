@@ -52,7 +52,7 @@ const Footer = () => {
               <Link
                 href="tel:+998991112233"
                 display={"inline-block"}
-                fontSize={"32px"}
+                fontSize={"28px"}
                 fontWeight={500}
                 color={"#fff"}
                 marginBottom={"20px"}

@@ -10,7 +10,7 @@ import FormWrapper from "../components/formSection/FormWrapper";
 
 const Home = () => {
   return (
-    <Box>
+    <Box component={"main"}>
       <Hero />
       <Grands />
       <Referens />
