@@ -17,7 +17,7 @@ const Home = () => {
       <Statist />
       <Chance />
       <Courses />
-      {/* <Response /> */}
+      <Response />
       {/* <FormWrapper /> */}
     </Box>
   );

@@ -1,18 +1,43 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import AccordionComp from "../accordion/Accordion";
-
+import { ContainerStyled } from "../generalStyle/GeneralStyle";
+import styled from "styled-components";
+const ResponseSection = styled(Box)`
+  @media (max-width: 920px) {
+    & h4 {
+      font-size: 32px;
+    }
+    & p {
+      font-size: 15px;
+      width: 80%;
+    }
+  }
+  @media (max-width: 720px) {
+    & h4 {
+      font-size: 26px;
+    }
+    & p {
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 420px) {
+    & h4 {
+      font-size: 20px;
+    }
+    & p {
+      font-size: 13px;
+    }
+  }
+`;
 const Response = () => {
   return (
-    <Box
+    <ResponseSection
       component={"section"}
       marginBottom={"80px"}
       padding={"80px 0 120px 0"}
       sx={{ backgroundColor: "#F5F5F7" }}
     >
-      <Container
-        maxWidth={"1680px"}
-        sx={{ margin: "0 auto", padding: "0 16px", width: "100%" }}
-      >
+      <ContainerStyled>
         <Stack>
           <Box marginBottom={"40px"}>
             <Typography
@@ -40,8 +65,8 @@ const Response = () => {
           </Box>
           <AccordionComp />
         </Stack>
-      </Container>
-    </Box>
+      </ContainerStyled>
+    </ResponseSection>
   );
 };
 
