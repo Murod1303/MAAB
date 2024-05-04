@@ -14,7 +14,7 @@ const Home = () => {
       <Hero />
       <Grands />
       <Referens />
-      {/* <Statist /> */}
+      <Statist />
       {/* <Chance /> */}
       {/* <Courses /> */}
       {/* <Response /> */}

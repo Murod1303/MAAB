@@ -1,13 +1,100 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
-
+import { Box, Stack, Typography } from "@mui/material";
+import { ContainerStyled } from "../generalStyle/GeneralStyle";
+import styled from "styled-components";
+const StatistSection = styled(Box)`
+  @media (max-width: 1155px) {
+    & .wrapper {
+      padding: 40px;
+    }
+    & h4 {
+      font-size: 36px;
+    }
+    & ul {
+      flex-wrap: wrap;
+    }
+    & li {
+      width: 45%;
+      padding: 26px;
+      & strong {
+        font-size: 32px;
+      }
+      & p {
+        text-align: center;
+      }
+    }
+  }
+  @media (max-width: 840px) {
+    & .wrapper {
+      padding: 35px;
+    }
+    & h4 {
+      font-size: 32px;
+    }
+    & ul {
+      flex-wrap: wrap;
+    }
+    & li {
+      width: 47%;
+      padding: 20px;
+      & strong {
+        font-size: 32px;
+      }
+    }
+  }
+  @media (max-width: 734px) {
+    & .wrapper {
+      padding: 30px;
+    }
+    & h4 {
+      font-size: 32px;
+    }
+    & li {
+      max-width: 400px;
+      width: 100%;
+      & strong {
+        font-size: 32px;
+      }
+    }
+  }
+  @media (max-width: 420px) {
+    & .wrapper {
+      padding: 30px;
+    }
+    & h4 {
+      font-size: 28px;
+    }
+    & li {
+      max-width: 400px;
+      width: 100%;
+      & strong {
+        font-size: 26px;
+      }
+    }
+  }
+  @media (max-width: 420px) {
+    & .wrapper {
+      padding: 24px;
+    }
+    & h4 {
+      font-size: 22px;
+    }
+    & li {
+      width: 100%;
+      & strong {
+        font-size: 20px;
+      }
+      & p {
+        font-size: 14px;
+      }
+    }
+  }
+`;
 const Statist = () => {
   return (
-    <Box component={"section"} marginBottom={"50px"}>
-      <Container
-        maxWidth="1680px"
-        sx={{ width: "100%", marginX: "auto", padding: "0 16px" }}
-      >
+    <StatistSection component={"section"} marginBottom={"50px"}>
+      <ContainerStyled>
         <Stack
+          className="wrapper"
           padding={"50px"}
           display={"flex"}
           alignItems={"center"}
@@ -15,6 +102,8 @@ const Statist = () => {
           sx={{ backgroundColor: "#F5F5F7", borderRadius: "40px" }}
         >
           <Typography
+            marginBottom={"20px"}
+            textAlign={"center"}
             component={"h4"}
             fontSize={"40px"}
             fontWeight={700}
@@ -122,8 +211,8 @@ const Statist = () => {
             </Box>
           </Box>
         </Stack>
-      </Container>
-    </Box>
+      </ContainerStyled>
+    </StatistSection>
   );
 };
 

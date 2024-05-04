@@ -2,6 +2,24 @@ import { Box, Stack, Typography } from "@mui/material";
 import { ContainerStyled } from "../generalStyle/GeneralStyle";
 import styled from "styled-components";
 const ReferenseSetion = styled(Box)`
+  @media (min-width: 1016px) {
+    & h3 {
+      font-size: 50px;
+    }
+    & .wrapper {
+      padding: 70px;
+    }
+    & li {
+      max-width: 500px;
+      width: 45%;
+      & strong {
+        font-size: 18px;
+      }
+      & p {
+        font-size: 13px;
+      }
+    }
+  }
   @media (max-width: 984px) {
     & h3 {
       font-size: 50px;
@@ -36,7 +54,7 @@ const ReferenseSetion = styled(Box)`
       }
     }
   }
-  @media (max-width: 834px) {
+  @media (max-width: 838px) {
     & h3 {
       font-size: 45px;
     }
