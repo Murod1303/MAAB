@@ -1,19 +1,94 @@
-import { Box, Container, Link, Stack, Typography } from "@mui/material";
-
+import { Box, Link, Stack, Typography } from "@mui/material";
+import { ContainerStyled } from "../generalStyle/GeneralStyle";
+import styled from "styled-components";
+const ChanceSection = styled(Box)`
+  @media (max-width: 764px) {
+    & h4 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+    & p {
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+    & a {
+      padding: 12px;
+    }
+  }
+  @media (max-width: 764px) {
+    & h4 {
+      width: 80%;
+      font-size: 36px;
+      margin-bottom: 18px;
+    }
+    & p {
+      width: 80%;
+      margin-bottom: 24px;
+    }
+    & .wrapper {
+      padding: 55px;
+    }
+  }
+  @media (max-width: 564px) {
+    & h4 {
+      width: 80%;
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    & p {
+      width: 90%;
+      margin-bottom: 20px;
+    }
+    & a {
+      width: 200px;
+      font-size: 15px;
+    }
+    & .wrapper {
+      padding: 45px;
+    }
+  }
+  @media (max-width: 472px) {
+    & h4 {
+      width: 90%;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+    & p {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+    & .wrapper {
+      padding: 35px;
+    }
+  }
+  @media (max-width: 382px) {
+    & h4 {
+      width: 70%;
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    & p {
+      width: 100%;
+      margin-bottom: 14px;
+    }
+    & .wrapper {
+      padding: 25px;
+    }
+  }
+`;
 const Chance = () => {
   return (
-    <Box component={"section"} marginBottom={"125px"}>
-      <Container
-        maxWidth={"1680px"}
-        sx={{ margin: "0 auto", padding: "0 16px", width: "100%" }}
-      >
+    <ChanceSection component={"section"} marginBottom={"125px"}>
+      <ContainerStyled>
         <Stack
+          className="wrapper"
           padding={"70px"}
           borderRadius={"40px"}
           overflow={"hidden"}
           sx={{
             backgroundImage: "url(./regars.jpg)",
-            backgroundSize: "100% ",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
             position: "relative",
             backgroundAttachment: "fixed",
           }}
@@ -62,8 +137,8 @@ const Chance = () => {
             </Link>
           </Box>
         </Stack>
-      </Container>
-    </Box>
+      </ContainerStyled>
+    </ChanceSection>
   );
 };
 
