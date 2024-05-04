@@ -1,7 +1,19 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { ContainerStyled } from "../generalStyle/GeneralStyle";
 import styled from "styled-components";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 const ReferenseSetion = styled(Box)`
+  & .card {
+    box-shadow: inset 0 0 0 0 #d1eb69;
+    color: #54b3d6;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    &:hover {
+      box-shadow: inset 500px 100px 10px 10px #caba43;
+      color: white;
+    }
+  }
   @media (min-width: 1016px) {
     & h3 {
       font-size: 50px;
@@ -127,6 +139,9 @@ const ReferenseSetion = styled(Box)`
   }
 `;
 const Referens = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <ReferenseSetion
       component={"section"}
@@ -152,6 +167,7 @@ const Referens = () => {
             fontSize={"60px"}
             fontWeight={"500"}
             color={"#fff"}
+            data-aos="zoom-out-down"
           >
             Kurs kimlar uchun?
           </Typography>
@@ -161,11 +177,22 @@ const Referens = () => {
               component={"ul"}
               display={"flex"}
               alignItems={"center"}
-              justifyContent={"space-evenly"}
+              justifyContent={"center"}
               flexWrap={"wrap"}
               gap={"20px 16px"}
+              data-aos="zoom-in"
             >
               <Box
+                sx={{
+                  transition: "all 0.5s",
+                  scale: "1",
+                  "&:hover": {
+                    boxShadow:
+                      " rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
+                    scale: "1.05",
+                  },
+                }}
+                borderRadius={"20px"}
                 component={"li"}
                 maxWidth={"390px"}
                 width={"100%"}
@@ -182,6 +209,7 @@ const Referens = () => {
                   borderRadius={"20px"}
                 ></Box>
                 <Box
+                  className="forHeight card"
                   position={"relative"}
                   width={"100%"}
                   padding={"20px"}
@@ -221,6 +249,16 @@ const Referens = () => {
                 maxWidth={"390px"}
                 width={"100%"}
                 position={"relative"}
+                sx={{
+                  transition: "all 0.5s",
+                  scale: "1",
+                  "&:hover": {
+                    boxShadow:
+                      " rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
+                    scale: "1.05",
+                  },
+                }}
+                borderRadius={"20px"}
               >
                 <Box
                   position={"absolute"}
@@ -233,7 +271,7 @@ const Referens = () => {
                   borderRadius={"20px"}
                 ></Box>
                 <Box
-                  className="forHeight"
+                  className="forHeight card"
                   position={"relative"}
                   width={"100%"}
                   padding={"20px"}
@@ -275,6 +313,16 @@ const Referens = () => {
                 maxWidth={"390px"}
                 width={"100%"}
                 position={"relative"}
+                sx={{
+                  transition: "all 0.5s",
+                  scale: "1",
+                  "&:hover": {
+                    boxShadow:
+                      " rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
+                    scale: "1.05",
+                  },
+                }}
+                borderRadius={"20px"}
               >
                 <Box
                   position={"absolute"}
@@ -287,7 +335,7 @@ const Referens = () => {
                   borderRadius={"20px"}
                 ></Box>
                 <Box
-                  className="forHeight"
+                  className="forHeight card"
                   position={"relative"}
                   width={"100%"}
                   padding={"20px"}
@@ -327,6 +375,16 @@ const Referens = () => {
                 maxWidth={"390px"}
                 width={"100%"}
                 position={"relative"}
+                sx={{
+                  transition: "all 0.5s",
+                  scale: "1",
+                  "&:hover": {
+                    boxShadow:
+                      " rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
+                    scale: "1.05",
+                  },
+                }}
+                borderRadius={"20px"}
               >
                 <Box
                   position={"absolute"}
@@ -339,7 +397,7 @@ const Referens = () => {
                   borderRadius={"20px"}
                 ></Box>
                 <Box
-                  className="forHeight"
+                  className="forHeight card"
                   position={"relative"}
                   width={"100%"}
                   padding={"20px"}
@@ -379,6 +437,16 @@ const Referens = () => {
                 maxWidth={"390px"}
                 width={"100%"}
                 position={"relative"}
+                sx={{
+                  transition: "all 0.5s",
+                  scale: "1",
+                  "&:hover": {
+                    boxShadow:
+                      " rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
+                    scale: "1.05",
+                  },
+                }}
+                borderRadius={"20px"}
               >
                 <Box
                   position={"absolute"}
@@ -391,6 +459,7 @@ const Referens = () => {
                   borderRadius={"20px"}
                 ></Box>
                 <Box
+                  className="forHeight card"
                   position={"relative"}
                   width={"100%"}
                   padding={"20px"}
@@ -430,6 +499,16 @@ const Referens = () => {
                 maxWidth={"390px"}
                 width={"100%"}
                 position={"relative"}
+                sx={{
+                  transition: "all 0.5s",
+                  scale: "1",
+                  "&:hover": {
+                    boxShadow:
+                      " rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
+                    scale: "1.05",
+                  },
+                }}
+                borderRadius={"20px"}
               >
                 <Box
                   position={"absolute"}
@@ -442,6 +521,7 @@ const Referens = () => {
                   borderRadius={"20px"}
                 ></Box>
                 <Box
+                  className="forHeight card"
                   position={"relative"}
                   width={"100%"}
                   padding={"20px"}

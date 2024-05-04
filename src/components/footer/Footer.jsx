@@ -16,9 +16,26 @@ const SocialsLi = styled.li`
     height: 24px;
     fill: #fff;
   }
+  & a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    &:hover svg {
+      fill: #285fe9;
+      transform: scale(1.2);
+    }
+  }
 `;
 const FooterSection = styled(Box)`
   padding: 30px;
+  & .footerLink a {
+    scale: 1;
+    transition: all 0.3s linear;
+    &:hover {
+      color: #ea1538;
+      scale: 1.005;
+    }
+  }
   @media (max-width: 720px) {
     padding: 20px;
     & .bgColor .forBgPadding {
@@ -59,6 +76,12 @@ const FooterSection = styled(Box)`
       & .footerLink a {
         font-size: 14px;
       }
+    }
+  }
+  @media (max-width: 360px) {
+    & .Forres {
+      flex-direction: column;
+      gap: 20px;
     }
   }
 `;
@@ -104,7 +127,14 @@ const Footer = () => {
                 fontWeight={500}
                 color={"#fff"}
                 marginBottom={"20px"}
-                sx={{ textDecoration: "none" }}
+                sx={{
+                  textDecoration: "none",
+                  transition: "color 0.3s, scale 0.3s",
+                  "&:hover": {
+                    color: "#ea1538",
+                    scale: "1.03",
+                  },
+                }}
               >
                 +998 97 783 90 45
               </Link>
@@ -137,7 +167,12 @@ const Footer = () => {
               </Stack>
             </Box>
             <Box component={"li"}>
-              <Box component={"ul"} display={"flex"} gap={"60px"}>
+              <Box
+                component={"ul"}
+                display={"flex"}
+                gap={"60px"}
+                className="Forres"
+              >
                 <Box component={"li"} className="nestedLi">
                   <Typography
                     display={"inline-block"}
@@ -190,7 +225,7 @@ const Footer = () => {
                   </Stack>
                 </Box>
 
-                <Box component={"li"} className="nestedLi">
+                <Box component={"li"} className="nestedLi ">
                   <Typography
                     display={"inline-block"}
                     component={"strong"}
@@ -325,6 +360,9 @@ const Footer = () => {
             </Box>
           </Box>
         </Box>
+        <Typography marginTop={"20px"} textAlign={"center"} color={"#5067d6"}>
+          Created By : <strong>MurodShernazaroff</strong>
+        </Typography>
       </ContainerStyled>
     </FooterSection>
   );

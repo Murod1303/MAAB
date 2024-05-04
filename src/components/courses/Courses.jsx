@@ -1,6 +1,9 @@
 import { Box, Stack, Typography } from "@mui/material";
 import { ContainerStyled } from "../generalStyle/GeneralStyle";
 import styled from "styled-components";
+import { useEffect } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 const CoursesSection = styled(Box)`
   @media (max-width: 1030px) {
     & h3 {
@@ -42,6 +45,9 @@ const CoursesSection = styled(Box)`
   }
 `;
 const Courses = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <CoursesSection component={"section"} marginBottom={"50px"}>
       <ContainerStyled>
@@ -60,10 +66,12 @@ const Courses = () => {
               color={"#1460F2"}
               fontWeight={700}
               textAlign={"center"}
+              data-aos="fade-down"
             >
               MAAB Akademiyasida BI imkoniyatlarini oching!
             </Typography>
             <Typography
+              data-aos="fade-up"
               component={"p"}
               fontSize={"16px"}
               color={"#000000c4"}
@@ -87,7 +95,15 @@ const Courses = () => {
                 maxWidth={"600px"}
                 width={"100%"}
                 component={"li"}
-                sx={{ backgroundColor: "#F5F5F7" }}
+                sx={{
+                  backgroundColor: "#F5F5F7",
+                  transition: "all 0.5s",
+                  "&:hover": {
+                    boxShadow:
+                      " rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
+                    backgroundColor: "#fff",
+                  },
+                }}
                 borderRadius={"30px"}
                 padding={"30px 0"}
               >
@@ -142,7 +158,15 @@ const Courses = () => {
                 maxWidth={"600px"}
                 width={"100%"}
                 component={"li"}
-                sx={{ backgroundColor: "#F5F5F7" }}
+                sx={{
+                  backgroundColor: "#F5F5F7",
+                  transition: "all 0.5s",
+                  "&:hover": {
+                    boxShadow:
+                      " rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
+                    backgroundColor: "#fff",
+                  },
+                }}
                 borderRadius={"30px"}
                 padding={"30px 0"}
               >

@@ -1,6 +1,9 @@
 import { Box, Container, Typography } from "@mui/material";
 import styled from "styled-components";
 import { FaPlay } from "react-icons/fa";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const BoxWrapper = styled.div`
   position: relative;
   height: 600px;
@@ -15,7 +18,6 @@ const BoxWrapper = styled.div`
   box-shadow: 0px 15px 46px 0px rgba(0, 0, 0, 0.56);
 `;
 const StartButton = styled.button`
-  /* background-color: "#ffffff"; */
   border: none;
   border-radius: 100%;
   display: flex;
@@ -101,13 +103,16 @@ const HeroSection = styled(Box)`
   }
 `;
 const Hero = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <HeroSection component={"section"} marginBottom={"120px"}>
       <Container
         maxWidth={"1840px"}
         sx={{ margin: "0 auto", paddingX: "16px" }}
       >
-        <BoxWrapper>
+        <BoxWrapper data-aos="fade-up">
           <StartButton>
             <FaPlay />
           </StartButton>

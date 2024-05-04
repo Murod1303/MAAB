@@ -20,15 +20,21 @@ import { ContainerStyled } from "../generalStyle/GeneralStyle";
 import Menu from "../menu/Menu";
 
 export const SocialsLi = styled.li`
-  & a {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-  }
   & a svg {
     width: 24px;
     height: 24px;
     fill: #9a999b;
+    transform: scale(1);
+    transition: transform 0.3s linear, fill 0.3s linear;
+  }
+  & a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    &:hover svg {
+      fill: #285fe9;
+      transform: scale(1.1);
+    }
   }
 `;
 export const DividerSpan = styled.span`
@@ -46,6 +52,15 @@ const HeaderStyled = styled(Box)`
       width: 24px;
       height: 24px;
       fill: #000;
+    }
+  }
+  & .contactBTN {
+    box-shadow: inset 0 0 0 0 #54b3d6;
+    color: #54b3d6;
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    &:hover {
+      box-shadow: inset 300px 50px 10px 10px #54b3d6;
+      color: white;
     }
   }
   @media (max-width: 724px) {
@@ -126,7 +141,19 @@ const Header = () => {
             alignItems={"center"}
           >
             <TiLocationOutline />
-            <Typography>Manzilimiz</Typography>
+            <Typography
+              sx={{
+                scale: "1",
+                transition: "color 0.2s, borderBottom 0.2s, scale 0.5s",
+                "&:hover": {
+                  borderBottom: "1px solid #285fe9",
+                  color: "#285fe9",
+                  scale: "1.1",
+                },
+              }}
+            >
+              Manzilimiz
+            </Typography>
           </Link>
           <Stack
             direction={"row"}
@@ -201,6 +228,11 @@ const Header = () => {
                 lineHeight: "30px",
                 fontWeight: "500",
                 fontSize: "20px",
+                transition: "color 0.3s, scale 0.3s",
+                "&:hover": {
+                  color: "#ea1538",
+                  scale: "1.03",
+                },
               }}
               href="tel:+998991112233"
               className="telMaab"

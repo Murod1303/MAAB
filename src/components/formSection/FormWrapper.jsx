@@ -88,6 +88,19 @@ const FormSection = styled(Box)`
       font-size: 12px;
     }
   }
+  @media (max-width: 1329px) and (min-width: 1096px) {
+    & .textWrapper {
+      margin-top: 50px;
+    }
+    & .BtnAndCheckBox {
+      & button {
+        margin: 0 auto;
+      }
+      & .checkboxComp {
+        width: 100%;
+      }
+    }
+  }
 `;
 const FormWrapper = () => {
   const [valueLang, setValueLang] = useState("");
@@ -226,7 +239,11 @@ const FormWrapper = () => {
                     setValueLang(e?.target?.value);
                   }}
                   required
-                  sx={{ width: "100%", margin: "0" }}
+                  sx={{
+                    width: "100%",
+                    margin: "0",
+                    backgroundColor: "#f5f5f7",
+                  }}
                 >
                   <MenuItem value={"ielts"}>IELTS</MenuItem>
                   <MenuItem value={"cefr"}>CEFR</MenuItem>
@@ -272,7 +289,11 @@ const FormWrapper = () => {
                     onChange={(e) => {
                       setValueLogic(e?.target?.value);
                     }}
-                    sx={{ width: "100%", margin: "0" }}
+                    sx={{
+                      width: "100%",
+                      margin: "0",
+                      backgroundColor: "#f5f5f7",
+                    }}
                   >
                     <MenuItem value={"1"}>Junior</MenuItem>
                     <MenuItem value={"2"}>Middle</MenuItem>

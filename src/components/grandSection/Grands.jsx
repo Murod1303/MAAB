@@ -1,6 +1,9 @@
 import { Box, Typography } from "@mui/material";
 import styled from "styled-components";
 import { ContainerStyled } from "../generalStyle/GeneralStyle";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const BoxCardBG = styled(Box)`
   background-image: url(./bgCard.jpg);
@@ -40,8 +43,15 @@ const GrandsWrapper = styled(Box)`
   }
 `;
 const Grands = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
-    <GrandsWrapper component={"section"} marginBottom={"100px"}>
+    <GrandsWrapper
+      component={"section"}
+      marginBottom={"100px"}
+      data-aos="zoom-out-up"
+    >
       <ContainerStyled>
         <Box>
           <Box
@@ -51,6 +61,7 @@ const Grands = () => {
             flexWrap={"wrap"}
             gap={"34px"}
             component={"ul"}
+            data-aos="fade-up"
           >
             <Box
               component={"li"}
@@ -60,6 +71,14 @@ const Grands = () => {
                 backgroundColor: "#F5F5F7",
                 borderRadius: "40px",
                 padding: "24px",
+                transition: "all 0.5s",
+                scale: "1",
+                "&:hover": {
+                  boxShadow:
+                    " rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
+                  scale: "1.05",
+                  backgroundColor: "#fff",
+                },
               }}
             >
               <BoxCardBG
@@ -67,7 +86,6 @@ const Grands = () => {
                 padding={"25px"}
                 width={"100%"}
                 sx={{
-                  backgroundColor: "url(./bgCard.jpg)",
                   borderRadius: "24px",
                 }}
               >
@@ -100,6 +118,14 @@ const Grands = () => {
               maxWidth={"450px"}
               width={"100%"}
               sx={{
+                transition: "all 0.5s",
+                scale: "1",
+                "&:hover": {
+                  boxShadow:
+                    " rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
+                  scale: "1.05",
+                  backgroundColor: "#fff",
+                },
                 backgroundColor: "#F5F5F7",
                 borderRadius: "40px",
                 padding: "24px",
@@ -109,7 +135,7 @@ const Grands = () => {
                 marginBottom={"40px"}
                 padding={"25px"}
                 width={"100%"}
-                sx={{ backgroundColor: "#fff", borderRadius: "24px" }}
+                sx={{ borderRadius: "24px" }}
               >
                 <Typography
                   component={"strong"}
@@ -140,6 +166,14 @@ const Grands = () => {
               maxWidth={"450px"}
               width={"100%"}
               sx={{
+                transition: "all 0.5s",
+                scale: "1",
+                "&:hover": {
+                  boxShadow:
+                    " rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
+                  scale: "1.05",
+                  backgroundColor: "#fff",
+                },
                 backgroundColor: "#F5F5F7",
                 borderRadius: "40px",
                 padding: "24px",
@@ -149,7 +183,7 @@ const Grands = () => {
                 marginBottom={"40px"}
                 padding={"25px"}
                 width={"100%"}
-                sx={{ backgroundColor: "#fff", borderRadius: "24px" }}
+                sx={{ borderRadius: "24px" }}
               >
                 <Typography
                   component={"strong"}
