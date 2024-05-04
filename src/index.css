@@ -22,6 +22,6 @@ body {
   right: 0;
   height: 12px;
   background-color: #ea1538;
-  transform-origin: 50%;
+  transform-origin: 0%;
   z-index: 15;
 }
