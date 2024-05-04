@@ -1,12 +1,50 @@
-import { Box, Container, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
+import { ContainerStyled } from "../generalStyle/GeneralStyle";
+import styled from "styled-components";
+const CoursesSection = styled(Box)`
+  @media (max-width: 1030px) {
+    & h3 {
+      font-size: 30px;
+    }
+    & ul {
+      gap: 30px;
+    }
+  }
+  @media (max-width: 860px) {
+    & h3 {
+      font-size: 26px;
+    }
+    & p {
+      font-size: 14px;
+    }
+    & ul {
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
+    & .typographyBox {
+      & strong {
+        font-size: 16px;
+      }
+      & p {
+        font-size: 13px;
+      }
+    }
+    & .bgCardTypog {
+      padding: 16px;
+      & span {
+        font-size: 13px;
+      }
+      & strong {
+        font-size: 15px;
+      }
+    }
+  }
+`;
 const Courses = () => {
   return (
-    <Box component={"section"} marginBottom={"50px"}>
-      <Container
-        maxWidth={"1680px"}
-        sx={{ margin: "0 auto", padding: "0 16px", width: "100%" }}
-      >
+    <CoursesSection component={"section"} marginBottom={"50px"}>
+      <ContainerStyled>
         <Stack>
           <Box
             display={"flex"}
@@ -21,6 +59,7 @@ const Courses = () => {
               fontSize={"32px"}
               color={"#1460F2"}
               fontWeight={700}
+              textAlign={"center"}
             >
               MAAB Akademiyasida BI imkoniyatlarini oching!
             </Typography>
@@ -53,6 +92,7 @@ const Courses = () => {
                 padding={"30px 0"}
               >
                 <Box
+                  className="typographyBox"
                   padding={"0 20px"}
                   display={"flex"}
                   alignItems={"center"}
@@ -79,6 +119,7 @@ const Courses = () => {
                   </Typography>
                 </Box>
                 <Box
+                  className="bgCardTypog"
                   padding={"20px"}
                   width={"100%"}
                   display={"flex"}
@@ -106,6 +147,7 @@ const Courses = () => {
                 padding={"30px 0"}
               >
                 <Box
+                  className="typographyBox"
                   padding={"0 20px"}
                   display={"flex"}
                   alignItems={"center"}
@@ -132,6 +174,7 @@ const Courses = () => {
                   </Typography>
                 </Box>
                 <Box
+                  className="bgCardTypog"
                   padding={"20px"}
                   width={"100%"}
                   display={"flex"}
@@ -153,8 +196,8 @@ const Courses = () => {
             </Box>
           </Box>
         </Stack>
-      </Container>
-    </Box>
+      </ContainerStyled>
+    </CoursesSection>
   );
 };
 

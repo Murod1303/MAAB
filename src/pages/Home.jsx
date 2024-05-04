@@ -16,7 +16,7 @@ const Home = () => {
       <Referens />
       <Statist />
       <Chance />
-      {/* <Courses /> */}
+      <Courses />
       {/* <Response /> */}
       {/* <FormWrapper /> */}
     </Box>
